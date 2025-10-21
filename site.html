@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NURAKO</title>
+    <meta name="description" content="Site pessoal de Nurako: programador, designer e entusiasta de jogos.">
+    <meta name="keywords" content="Nurako, programação, design gráfico, jogos, Persona, Sonic">
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://toppng.com/uploads/thumbnail/hantom-thieves-logo-persona-5-phantom-thieves-logo-115690622438koclkgktq.png">
+
+    <style>
+        :root {
+            --primary-color: #FF0000;
+            --background-color: #000000;
+            --text-color: #ffffff;
+            --secondary-text: #cccccc;
+            --accent-color: #333333;
+            --shadow: 0 4px 20px rgba(255, 0, 0, 0.1);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: #0f0000;
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--primary-color);
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            color: var(--secondary-text);
+            font-weight: 400;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            background: rgba(227, 5, 5, 0.05);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 0, 0, 0.2);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .profile-section:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+
+        .profile-section img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            align-self: center;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .profile-section img:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-section p {
+            font-size: 1.1rem;
+            text-align: left;
+            color: var(--text-color);
+            hyphens: auto;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--background-color) 100%);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+            margin-top: auto;
+        }
+
+        .footer-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .footer-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer-icons img {
+            height: 35px;
+            width: auto;
+            transition: var(--transition);
+        }
+
+        .footer-icons img:hover {
+            transform: scale(1.2);
+            filter: brightness(0) invert(1) sepia(1) hue-rotate(0deg) saturate(5);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .profile-section {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .profile-section:nth-child(1) { animation-delay: 0.2s; }
+        .profile-section:nth-child(2) { animation-delay: 0.4s; }
+
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin: 2rem auto;
+                padding: 0 1rem;
+            }
+
+            header {
+                padding: 1.5rem 0;
+            }
+
+            .profile-section {
+                padding: 1.5rem;
+            }
+
+            .profile-section img {
+                max-width: 100%;
+            }
+
+            header h1 {
+                font-size: clamp(1.8rem, 6vw, 3rem);
+            }
+
+            header p {
+                font-size: clamp(0.9rem, 3vw, 1.2rem);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile-section {
+                padding: 1rem;
+            }
+
+            .profile-section p {
+                font-size: 1rem;
+            }
+
+            .footer-icons {
+                gap: 10px;
+            }
+
+            .footer-icons img {
+                height: 30px;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .cabecalho {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .cabecalho-titulo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .logo {
+            width: 40px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .subtitulo {
+            margin-top: 5px;
+            font-size: 20px;
+            color: var(--secondary-text);
+        }
+
+        .gifhor {
+    width: 100%;           
+    display: flex;
+    justify-content: center; 
+    margin: 2rem 0;        
+}
+
+.gifhor img {
+    width: 100%;          
+    max-width: 600px;     
+    height: auto;          
+    border: 15px solid #1e0000;
+    border-radius: 12px;  
+}
+    </style>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="cabecalho-titulo">
+            <img src="https://i.redd.it/6398to5363u51.png" width="20px" alt="knight fofo" class="logo">
+            <h1>NURAKO</h1>
+        </div>
+        <p class="subtitulo">coisas sobre mim aqui, buds</p>
+    </header>
+
+    <main class="main-content">
+        <section class="profile-section">
+            <img src="https://i.ibb.co/svYMNrbD/7620-futaba.jpg" alt="Foto de perfil - Nurako">
+            <p>Meu nome é Nurako, mas pode me chamar de buracu, curabo, nuks, nuras, enfim. Eu gosto de Persona, Sonic, Hollow Knight, Bomb Rush Cyberfunk, Final Fantasy, e dentre milhares de jogos nesse estilo.</p>
+        </section>
+
+        <section class="profile-section">
+            <img src="https://i.ibb.co/gcH3B9r/9dea7eed5dd8c386063b115e045b611e.jpg" alt="Foto de perfil profissional - Design e Programação">
+            <p>Eu sou programador amador, design gráfico com nível intermediário de experiência e quero desenvolver UIs para jogos. Eu tenho um canal no youtube e posto video de vez em nunca, portanto, não precisa me seguir. A rede social que eu sou mais ativo é o Twitter, sinta-se à vontade para interagir comigo.</p>
+        </section>
+    </main>
+
+    <div class="gifhor">
+        <img src="https://i.pinimg.com/originals/d2/c5/6a/d2c56a5f64e319aea6ac29816382cfe1.gif"alt="gifhorizontal">
+    </div>
+
+    <footer>
+        <div class="footer-center">
+            <div class="footer-icons">
+                <a href="https://www.youtube.com/@nuksssss" target="_blank" title="YouTube">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube">
+                </a>
+                <a href="https://twitter.com/nurakooo" target="_blank" title="Twitter">
+                    <img src="https://1000marcas.net/wp-content/uploads/2025/04/X-Logo.png" alt="Twitter">
+                </a>
+                <p>© 2025 Todos os direitos reservados ao Joker Persona Five</p>
+                <a href="https://steamcommunity.com/id/allhailgus" target="_blank" title="Steam">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/2048px-Steam_icon_logo.svg.png" alt="Steam">
+                </a>
+                <a href="https://backloggd.com/u/nuksss" target="_blank" title="Backloggd">
+                    <img src="https://backloggd.com/favicon.ico" alt="Backloggd">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
